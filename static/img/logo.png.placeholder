@@ -1,0 +1,10 @@
+ConnectAbroad Logo Placeholder
+
+This file should be replaced with the actual ConnectAbroad logo:
+- A globe-with-people icon in PNG format
+- Primary color: #276EB2
+- Recommended dimensions: 200x60px for header, 400x120px for login page
+
+Upload your logo image to: /static/img/logo.png
+
+The LogoImage class will automatically detect and use this file.

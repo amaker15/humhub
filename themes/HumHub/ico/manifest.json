@@ -1,4 +1,11 @@
 {
+ "name": "ConnectAbroad",
+ "short_name": "ConnectAbroad",
+ "description": "Connecting Students Beyond Borders",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#DCE6F2",
+ "theme_color": "#276EB2",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

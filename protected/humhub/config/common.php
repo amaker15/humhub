@@ -41,7 +41,7 @@ $logTargetConfig = [
 ];
 
 $config = [
-    'name' => 'HumHub',
+    'name' => 'ConnectAbroad',
     'version' => '1.17.4',
     'minRecommendedPhpVersion' => '8.1',
     'minSupportedPhpVersion' => '8.1',
@@ -156,17 +156,11 @@ $config = [
         ],
         'db' => [
             'class' => \yii\db\Connection::class,
-            // Fix for MySQL 8.0.21+: https://github.com/yiisoft/yii2/issues/18207
-            'schemaMap' => [
-                'mysqli' => 'humhub\components\db\MysqlSchema',
-                'mysql' => 'humhub\components\db\MysqlSchema',
-            ],
-            'dsn' => 'mysql:host=localhost;dbname=humhub',
-            'username' => '',
-            'password' => '',
-            'charset' => 'utf8mb4',
+            'dsn' => getenv('DATABASE_URL') ?: 'pgsql:host=localhost;dbname=connectabroad',
+            'username' => getenv('DB_USER') ?: 'connectabroad_user',
+            'password' => getenv('DB_PASSWORD') ?: 'securepw',
+            'charset' => 'utf8',
             'enableSchemaCache' => true,
-            'on afterOpen' => ['humhub\libs\Helpers', 'SqlMode'],
         ],
         'authClientCollection' => [
             'class' => \humhub\modules\user\authclient\Collection::class,
